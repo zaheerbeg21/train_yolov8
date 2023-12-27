@@ -7,3 +7,6 @@ wget https://drive.google.com/drive/folders/1Eabig7itGBEwGP_0aLo0i_vqD51e8bvg?us
 # download sort
 
 wget git clone https://github.com/abewley/sort.git
+
+#install in ubuntu
+apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
