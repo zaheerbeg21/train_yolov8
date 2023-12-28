@@ -1,5 +1,5 @@
-path: /home/train_yolov8/images_dataset/ # dataset path,  use absolute path
-train: /home/train_yolov8/images_dataset/images # training images
+path: /home/train_yolov8/dataset/ # dataset path,  use absolute path
+train: /home/train_yolov8/dataset/images # training images
 val: /home/train_yolov8/val_images # validation images
 
 # path: images_dataset
