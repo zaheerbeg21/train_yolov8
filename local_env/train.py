@@ -3,9 +3,10 @@ CUDA_LAUNCH_BLOCKING=1
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO('yolov8n.yaml')  # build a new model from YAML
+# model = YOLO('yolov8n.yaml')  # build a new model from YAML
 # model = YOLO('yolov8n.pt')  # load a pretrained model (recommended for training)
 # model = YOLO('yolov8n.yaml').load('yolov8n.pt')  # build from YAML and transfer weights
+model = YOLO('yolov8n.yaml').load('/home/train_yolov8/local_env/epc_100_img_165/weights/best.pt')  # build from YAML and transfer weights
 
 conf_path = '/home/train_yolov8/local_env/config.yaml'
 number_of_epochs = 100
