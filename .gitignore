@@ -125,7 +125,7 @@ venv/
 env.bak/
 venv.bak/
 
-images_dataset/
+
 
 # Spyder project settings
 .spyderproject
