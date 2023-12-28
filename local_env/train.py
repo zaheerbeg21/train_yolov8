@@ -1,11 +1,13 @@
+CUDA_LAUNCH_BLOCKING=1
+
 from ultralytics import YOLO
 
 # Load a model
 model = YOLO('yolov8n.yaml')  # build a new model from YAML
-model = YOLO('yolov8n.pt')  # load a pretrained model (recommended for training)
-model = YOLO('yolov8n.yaml').load('yolov8n.pt')  # build from YAML and transfer weights
+# model = YOLO('yolov8n.pt')  # load a pretrained model (recommended for training)
+# model = YOLO('yolov8n.yaml').load('yolov8n.pt')  # build from YAML and transfer weights
 
-conf_path = 'config.yaml'
+conf_path = '/home/train_yolov8/local_env/config.yaml'
 number_of_epochs = 100
 
 # Load a model
@@ -20,7 +22,7 @@ results = model.train(data=conf_path, epochs=number_of_epochs)  # train the mode
 # results = model.train(resume=True)
 
 # Train the model with 2 GPUs
-# results = model.train(data=conf_path, epochs=number_of_epochs, device=[0, 1])
+# results = model.train(data=conf_path, epochs=number_of_epochs, device=[0,1])
 
 
 
