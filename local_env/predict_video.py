@@ -6,16 +6,24 @@ import cv2
 
 VIDEOS_DIR = os.path.join('.', 'videos')
 
-video_path = os.path.join(VIDEOS_DIR, 'anpr.mp4')
-video_path_out = '{}_out.mp4'.format(video_path)
+import os
 
-cap = cv2.VideoCapture(video_path)
+VIDEOS_DIR = '/content/train_yolov8/input_video/'  # Assuming this is the correct directory for input videos
+video_path_in = '20231229_112130.mp4'  # Specify only the filename here
+
+video_path_in = os.path.join(VIDEOS_DIR, video_path_in)  # Construct the full input path
+video_path_out = os.path.splitext(video_path_in)[0] + '_out.mp4'  # Extract base name and add '_out.mp4'
+
+print(video_path_out)  # This will now print '/content/train_yolov8/input_video/20231229_112130_out.mp4'
+
+
+cap = cv2.VideoCapture(video_path_in)
 ret, frame = cap.read()
 H, W, _ = frame.shape
 out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'MP4V'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
 
-model_path = os.path.join('.', 'runs', 'detect', 'train', 'weights', 'last.pt')
-
+model_path = '/content/train_yolov8/local_env/epc_100_img_165/weights/best.pt'
+# model_path = '/content/train_yolov8/local_env/epoc_100_img_805/best.pt'
 # Load a model
 model = YOLO(model_path)  # load a custom model
 
